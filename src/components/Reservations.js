@@ -5,29 +5,29 @@ import Button from '@material-ui/core/Button';
 import Snackbar from '@material-ui/core/Snackbar';
 import moment from 'moment'
 
-export default function Traininglist() {
+export default function BookedTrainings() {
 
-    const [trainings, setTrainings] = useState([])
+    const [reservations, setReservations] = useState([])
     const [open, setOpen] = useState(false);
     const [msg, setMsg] = useState('');
 
     useEffect(() => {
-        getTrainings()
+        getReservations()
     }, [])
 
-    const getTrainings = () => {
-        fetch('https://customerrest.herokuapp.com/api/trainings')
+    const getReservations = () => {
+        fetch('https://customerrest.herokuapp.com/gettrainings')
             .then(response => response.json())
-            .then(data => setTrainings(data.content))
+            .then(data => setReservations(data))
             .catch(err => console.log(err))
     }
 
-    const deleteTraining = (link) => {
+    const deleteReservation = (link) => {
         if (window.confirm('Are you sure?')) {
             fetch(link, { method: 'DELETE' })
-                .then(_ => getTrainings())
+                .then(_ => getReservations())
                 .then(_ => {
-                    setMsg('Training deleted')
+                    setMsg('Reservation deleted')
                     setOpen(true)
                 })
                 .catch(err => console.log(err))
@@ -39,6 +39,10 @@ export default function Traininglist() {
     }
 
     const columns = [
+        {
+            Header: 'Training id',
+            accessor: 'id'
+        },
         {
             id: 'date',
             Header: 'Date and time',
@@ -57,7 +61,19 @@ export default function Traininglist() {
             accessor: 'activity'
         },
         {
-            Cell: row => (<Button size="small" color="secondary" onClick={() => deleteTraining(row.original.links[0].href)}>Delete</Button>)
+            Header: 'Customer id',
+            accessor: 'customer.id'
+        },
+        {
+            Header: 'Firstname',
+            accessor: 'customer.firstname'
+        },
+        {
+            Header: 'Lastname',
+            accessor: 'customer.lastname'
+        },
+        {
+            Cell: row => (<Button size="small" color="secondary" onClick={() => deleteReservation(row.original.links[0].href)}>Delete</Button>)
         }
     ]
 
@@ -66,7 +82,7 @@ export default function Traininglist() {
             <ReactTable
                 defaultPageSize={10}
                 filterable={true}
-                data={trainings}
+                data={reservations}
                 columns={columns} />
             <Snackbar
                 open={open}

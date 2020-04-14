@@ -5,6 +5,7 @@ import Button from '@material-ui/core/Button';
 import Snackbar from '@material-ui/core/Snackbar';
 import Addcustomer from './Addcustomer.js';
 import Editcustomer from './Editcustomer.js';
+import AddTrainingForCustomer from './AddTrainingForCustomer.js';
 
 export default function Customerlist() {
 
@@ -69,6 +70,23 @@ export default function Customerlist() {
             .catch(err => console.log(err))
     }
 
+    const addTrainingForCustomer = (link, training) => {
+        fetch(link, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(training)
+        })
+            .then(_ => getCustomers())
+            .then(_ => {
+                setMsg('Reservation added')
+                setOpen(true)
+            })
+            .catch(err => console.log(err))
+
+    }
+
     const handleClose = () => {
         setOpen(false);
     }
@@ -101,6 +119,9 @@ export default function Customerlist() {
         {
             Header: 'Phone',
             accessor: 'phone'
+        },
+        {
+            Cell: row => (<AddTrainingForCustomer training={row.original} addTrainingForCustomer={addTrainingForCustomer} />)
         },
         {
             Cell: row => (<Editcustomer customer={row.original} updateCustomer={updateCustomer} />)
