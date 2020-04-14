@@ -70,8 +70,10 @@ export default function Customerlist() {
             .catch(err => console.log(err))
     }
 
-    const addTrainingForCustomer = (link, training) => {
-        fetch(link, {
+    const addTrainingForCustomer = (training) => {
+        console.log(training)
+        console.log("funktio addtrainingforcustomer moikka anton")
+        fetch('https://customerrest.herokuapp.com/api/trainings', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -121,7 +123,7 @@ export default function Customerlist() {
             accessor: 'phone'
         },
         {
-            Cell: row => (<AddTrainingForCustomer training={row.original} addTrainingForCustomer={addTrainingForCustomer} />)
+            Cell: row => (<AddTrainingForCustomer singleCustomer={row.original} addTrainingForCustomer={addTrainingForCustomer} />)
         },
         {
             Cell: row => (<Editcustomer customer={row.original} updateCustomer={updateCustomer} />)

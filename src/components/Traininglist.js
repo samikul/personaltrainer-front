@@ -42,12 +42,18 @@ export default function Traininglist() {
         {
             id: 'date',
             Header: 'Date and time',
-            accessor: date => {
-                return (     
+            accessor: (date) => {
+                return (
                     moment().format('MMMM Do YYYY, h:mm:ss a')
-                    )
+                )
             }
         },
+        /*         
+        {
+            Header: 'Datetime',
+            accessor: 'date'
+        }, 
+        */
         {
             Header: 'Duration (minutes)',
             accessor: 'duration'

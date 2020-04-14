@@ -39,10 +39,10 @@ export default function BookedTrainings() {
     }
 
     const columns = [
-        {
+/*         {
             Header: 'Training id',
             accessor: 'id'
-        },
+        }, */
         {
             id: 'date',
             Header: 'Date and time',
@@ -51,6 +51,10 @@ export default function BookedTrainings() {
                     moment().format('MMMM Do YYYY, h:mm:ss a')
                     )
             }
+        },
+        {
+            Header: 'Datetime',
+            accessor: 'date'
         },
         {
             Header: 'Duration (minutes)',

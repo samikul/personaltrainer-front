@@ -24,7 +24,7 @@ export default function Trainer() {
 
   return (
     <div>
-      <h2>Persons</h2>
+      <h2>Personal trainers</h2>
       <Table responsive="lg">
         <thead>
           <tr>

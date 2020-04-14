@@ -42,7 +42,7 @@ export default function Addcustomer(props) {
                 Add customer
             </Button>
             <Dialog open={open} disableBackdropClick={true} disableEscapeKeyDown={true} onClose={handleClose} aria-labelledby="form-dialog-title">
-                <DialogTitle id="form-dialog-title">New car</DialogTitle>
+                <DialogTitle id="form-dialog-title">New customer</DialogTitle>
                 <DialogContent>
                     <TextField
                         autoFocus

@@ -17,21 +17,35 @@ export default function AddTrainingForCustomer(props) {
         customer: '',
     })
 
-
     const handleClickOpen = () => {
-        console.log(props.training.links[2].href);
-        setTraining({
-            date: props.training.date,
-            duration: props.training.duration,
-            activity: props.training.activity,
-            customer: props.training.customer,
-        })
+        console.log("handeclickopen addtraininforcustomer komponentti ");
+        console.log(props.training);
+        console.log(props)
+        console.log(props.singleCustomer.date)
+        console.log(props.singleCustomer.duration)
+        console.log(props.singleCustomer.activity)
+        console.log(props.singleCustomer.links[0].href);
+        setTraining({ ...training, customer: props.singleCustomer.links[0].href });
+        /*         setTraining({
+                    "date": props.training.date,
+                    "duration": props.training.duration,
+                    "activity": props.training.activity,
+                    "customer": props.training.customer,
+                }) */
+        console.log(training)
         setOpen(true);
     }
 
     const handleClose = () => {
-        props.updateTraining(props.training.links[2].href, training);
-        setOpen(false);
+        console.log("handleclose")
+        console.log(training)
+        props.addTrainingForCustomer(
+            training)
+/*             training.customer,
+            training.date,
+            training.activity,
+            training.duration); */
+            setOpen(false);
     }
 
     const handleCancel = () => {
@@ -40,6 +54,7 @@ export default function AddTrainingForCustomer(props) {
 
     const inputChanged = (event) => {
         setTraining({ ...training, [event.target.name]: event.target.value });
+        console.log(training)
     }
 
     return (
@@ -56,7 +71,7 @@ export default function AddTrainingForCustomer(props) {
                         id="date"
                         name="date"
                         defaultValue="2020-01-01 00:00"
-                        value={training.date}
+                        value={props.singleCustomer.date}
                         onChange={inputChanged}
                         label="Date"
                         fullWidth
@@ -65,7 +80,7 @@ export default function AddTrainingForCustomer(props) {
                         margin="dense"
                         id="activity"
                         name="activity"
-                        value={training.activity}
+                        value={props.singleCustomer.activity}
                         onChange={inputChanged}
                         label="activity"
                         fullWidth
@@ -74,7 +89,7 @@ export default function AddTrainingForCustomer(props) {
                         margin="dense"
                         id="duration"
                         name="duration"
-                        value={training.duration}
+                        value={props.singleCustomer.duration}
                         onChange={inputChanged}
                         label="duration"
                         fullWidth
