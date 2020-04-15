@@ -48,12 +48,6 @@ export default function Traininglist() {
                 )
             }
         },
-        /*         
-        {
-            Header: 'Datetime',
-            accessor: 'date'
-        }, 
-        */
         {
             Header: 'Duration (minutes)',
             accessor: 'duration'

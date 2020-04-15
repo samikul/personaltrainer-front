@@ -10,6 +10,7 @@ import 'date-fns';
 export default function AddTrainingForCustomer(props) {
 
     const [open, setOpen] = useState(false)
+    const [name, setName] = useState([]);
     const [training, setTraining] = useState({
         date: '',
         duration: '',
@@ -17,35 +18,22 @@ export default function AddTrainingForCustomer(props) {
         customer: '',
     })
 
+    const getCustomersName = () => {
+        fetch(props.singleCustomer.links[0].href)
+            .then(response => response.json())
+            .then(name => setName(name.firstname + " " + name.lastname))
+            .catch(err => console.log(err))
+    }
+
     const handleClickOpen = () => {
-        console.log("handeclickopen addtraininforcustomer komponentti ");
-        console.log(props.training);
-        console.log(props)
-        console.log(props.singleCustomer.date)
-        console.log(props.singleCustomer.duration)
-        console.log(props.singleCustomer.activity)
-        console.log(props.singleCustomer.links[0].href);
+        getCustomersName();
         setTraining({ ...training, customer: props.singleCustomer.links[0].href });
-        /*         setTraining({
-                    "date": props.training.date,
-                    "duration": props.training.duration,
-                    "activity": props.training.activity,
-                    "customer": props.training.customer,
-                }) */
-        console.log(training)
         setOpen(true);
     }
 
     const handleClose = () => {
-        console.log("handleclose")
-        console.log(training)
-        props.addTrainingForCustomer(
-            training)
-/*             training.customer,
-            training.date,
-            training.activity,
-            training.duration); */
-            setOpen(false);
+        props.addTrainingForCustomer(training)
+        setOpen(false);
     }
 
     const handleCancel = () => {
@@ -54,16 +42,15 @@ export default function AddTrainingForCustomer(props) {
 
     const inputChanged = (event) => {
         setTraining({ ...training, [event.target.name]: event.target.value });
-        console.log(training)
     }
 
     return (
         <div>
             <Button size="small" color="default" onClick={handleClickOpen}>
-                Add training
+                New training
         </Button>
             <Dialog open={open} disableBackdropClick={true} disableEscapeKeyDown={true} onClose={handleClose} aria-labelledby="form-dialog-title">
-                <DialogTitle id="form-dialog-title">asdfsadfasdf</DialogTitle>
+                <DialogTitle id="form-dialog-title">Add training for {name}</DialogTitle>
                 <DialogContent>
                     <TextField
                         autoFocus

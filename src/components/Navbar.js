@@ -19,7 +19,7 @@ const Navbar = () => {
               <ReactBootStrap.Nav.Link href="Trainings">Trainings</ReactBootStrap.Nav.Link>
             </Link>
             <Link to="/Reservations">
-              <ReactBootStrap.Nav.Link href="Reservations">Reservations</ReactBootStrap.Nav.Link>
+              <ReactBootStrap.Nav.Link href="Reservations">Customers with trainings</ReactBootStrap.Nav.Link>
             </Link>
             <Link to="/Calendar">
               <ReactBootStrap.Nav.Link href="/Calendar">Calendar</ReactBootStrap.Nav.Link>

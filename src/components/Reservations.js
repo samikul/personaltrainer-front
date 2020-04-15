@@ -39,10 +39,6 @@ export default function BookedTrainings() {
     }
 
     const columns = [
-/*         {
-            Header: 'Training id',
-            accessor: 'id'
-        }, */
         {
             id: 'date',
             Header: 'Date and time',
@@ -75,9 +71,6 @@ export default function BookedTrainings() {
         {
             Header: 'Lastname',
             accessor: 'customer.lastname'
-        },
-        {
-            Cell: row => (<Button size="small" color="secondary" onClick={() => deleteReservation(row.original.links[0].href)}>Delete</Button>)
         }
     ]
 

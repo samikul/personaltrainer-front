@@ -9,7 +9,7 @@ import AddTrainingForCustomer from './AddTrainingForCustomer.js';
 
 export default function Customerlist() {
 
-    const [customers, setCustomers] = useState([])
+    const [customers, setCustomers] = useState([]);
     const [open, setOpen] = useState(false);
     const [msg, setMsg] = useState('');
 
@@ -71,8 +71,6 @@ export default function Customerlist() {
     }
 
     const addTrainingForCustomer = (training) => {
-        console.log(training)
-        console.log("funktio addtrainingforcustomer moikka anton")
         fetch('https://customerrest.herokuapp.com/api/trainings', {
             method: 'POST',
             headers: {
@@ -86,7 +84,6 @@ export default function Customerlist() {
                 setOpen(true)
             })
             .catch(err => console.log(err))
-
     }
 
     const handleClose = () => {
