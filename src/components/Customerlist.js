@@ -6,6 +6,10 @@ import Snackbar from '@material-ui/core/Snackbar';
 import Addcustomer from './Addcustomer.js';
 import Editcustomer from './Editcustomer.js';
 import AddTrainingForCustomer from './AddTrainingForCustomer.js';
+import DeleteIcon from '@material-ui/icons/Delete';
+import IconButton from '@material-ui/core/IconButton';
+
+
 
 export default function Customerlist() {
 
@@ -126,11 +130,13 @@ export default function Customerlist() {
             Cell: row => (<Editcustomer customer={row.original} updateCustomer={updateCustomer} />)
         },
         {
-            Cell: row => (<Button size="small" color="secondary" onClick={() => deleteCustomer(row.original.links[0].href)}>Delete</Button>)
+            Cell: row => (<IconButton aria-label="delete" size="small" color="secondary" onClick={() => deleteCustomer(row.original.links[0].href)}><DeleteIcon /></IconButton>)
         }
     ]
 
     return (
+        //             Cell: row => (<Button size="small" color="secondary" onClick={() => deleteCustomer(row.original.links[0].href)}>Delete</Button>)
+
         <div>
             <Addcustomer
                 addCustomer={addCustomer} />

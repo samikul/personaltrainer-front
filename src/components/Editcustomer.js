@@ -5,6 +5,8 @@ import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import EditIcon from '@material-ui/icons/Edit';
+import IconButton from '@material-ui/core/IconButton';
 
 export default function Editcustomer(props) {
 
@@ -49,9 +51,12 @@ export default function Editcustomer(props) {
 
     return (
         <div>
-            <Button size="small" color="primary" onClick={handleClickOpen}>
+            <IconButton size="small" color="primary" onClick={handleClickOpen}>
+                <EditIcon />
+        </IconButton>
+{/*         <Button size="small" color="primary" onClick={handleClickOpen}>
                 Edit
-        </Button>
+        </Button> */}
             <Dialog open={open} disableBackdropClick={true} disableEscapeKeyDown={true} onClose={handleClose} aria-labelledby="form-dialog-title">
                 <DialogTitle id="form-dialog-title">Edit existing customer</DialogTitle>
                 <DialogContent>
