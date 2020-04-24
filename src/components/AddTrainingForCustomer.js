@@ -6,6 +6,7 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import 'date-fns';
+import DateTimePicker from './DateTimePicker.js';
 
 export default function AddTrainingForCustomer(props) {
 
@@ -52,6 +53,14 @@ export default function AddTrainingForCustomer(props) {
             <Dialog open={open} disableBackdropClick={true} disableEscapeKeyDown={true} onClose={handleClose} aria-labelledby="form-dialog-title">
                 <DialogTitle id="form-dialog-title">Add training for {name}</DialogTitle>
                 <DialogContent>
+
+                    <DateTimePicker />
+
+                    {/*
+                    Päivämäärä tulee syöttää allaolevassa formissa muodossa yyyy-dd-mm,
+                    jotta päivämäärä tallentuu oikein. Kellonaika ei tallennu. Date- ja timepicker
+                    toimii, mutta ei tallennu tietokantaan. "Invalid date"
+
                     <TextField
                         autoFocus
                         margin="dense"
@@ -63,13 +72,15 @@ export default function AddTrainingForCustomer(props) {
                         label="Date"
                         fullWidth
                     />
+                    */}
+
                     <TextField
                         margin="dense"
                         id="activity"
                         name="activity"
                         value={props.singleCustomer.activity}
                         onChange={inputChanged}
-                        label="activity"
+                        label="Activity"
                         fullWidth
                     />
                     <TextField
@@ -78,7 +89,7 @@ export default function AddTrainingForCustomer(props) {
                         name="duration"
                         value={props.singleCustomer.duration}
                         onChange={inputChanged}
-                        label="duration"
+                        label="Duration"
                         fullWidth
                     />
                 </DialogContent>

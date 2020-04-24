@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ReactTable from 'react-table-v6'
 import 'react-table-v6/react-table.css'
-import Button from '@material-ui/core/Button';
 import Snackbar from '@material-ui/core/Snackbar';
 import Addcustomer from './Addcustomer.js';
 import Editcustomer from './Editcustomer.js';

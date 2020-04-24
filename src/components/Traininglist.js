@@ -43,12 +43,12 @@ export default function Traininglist() {
 
         {
             id: 'date',
-            Header: 'Date',
+            Header: 'Date and time',
             accessor: (d) => {
                 return (
                     moment(d.date)
                     .local()
-                    .format("DD/MM/YYYY hh:mm:ss a")
+                    .format("DD.MM.YYYY hh:mm:ss a")
                 )
             }
         },
