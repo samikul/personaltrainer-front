@@ -21,9 +21,6 @@ const Navbar = () => {
             <Link to="/Reservations">
               <ReactBootStrap.Nav.Link href="Reservations">Customers with trainings</ReactBootStrap.Nav.Link>
             </Link>
-            <Link to="/Calendar">
-              <ReactBootStrap.Nav.Link href="/Calendar">Calendar</ReactBootStrap.Nav.Link>
-            </Link>
             <ReactBootStrap.NavDropdown title="Personal trainers" id="collasible-nav-dropdown">
               <Link to="/Coachlist">
                 <ReactBootStrap.NavDropdown.Item href="/Coacheslist/3.1">List</ReactBootStrap.NavDropdown.Item>
@@ -33,14 +30,14 @@ const Navbar = () => {
               </Link>
             </ReactBootStrap.NavDropdown>
           </ReactBootStrap.Nav>
-          <ReactBootStrap.Nav>
+{/*           <ReactBootStrap.Nav>
             <Link to="/Coachlist">
               <ReactBootStrap.Nav.Link href="/Coacheslist">Personal trainer list</ReactBootStrap.Nav.Link>
             </Link>
             <Link to="/Coachgrid">
               <ReactBootStrap.Nav.Link eventKey={2} href="/Coachesgrid">Personal trainer grid</ReactBootStrap.Nav.Link>
             </Link>
-          </ReactBootStrap.Nav>
+          </ReactBootStrap.Nav> */}
         </ReactBootStrap.Navbar.Collapse>
       </ReactBootStrap.Navbar>
     </div>

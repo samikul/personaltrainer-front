@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ReactTable from 'react-table-v6'
 import 'react-table-v6/react-table.css'
-import Button from '@material-ui/core/Button';
 import Snackbar from '@material-ui/core/Snackbar';
 import moment from 'moment'
 
@@ -22,18 +21,6 @@ export default function BookedTrainings() {
             .catch(err => console.log(err))
     }
 
-    const deleteReservation = (link) => {
-        if (window.confirm('Are you sure?')) {
-            fetch(link, { method: 'DELETE' })
-                .then(_ => getReservations())
-                .then(_ => {
-                    setMsg('Reservation deleted')
-                    setOpen(true)
-                })
-                .catch(err => console.log(err))
-        }
-    }
-
     const handleClose = () => {
         setOpen(false);
     }
@@ -41,16 +28,14 @@ export default function BookedTrainings() {
     const columns = [
         {
             id: 'date',
-            Header: 'Date and time',
-            accessor: date => {
-                return (     
-                    moment().format('MMMM Do YYYY, h:mm:ss a')
-                    )
+            Header: 'Date',
+            accessor: (d) => {
+                return (
+                    moment(d.date)
+                    .local()
+                    .format("DD/MM/YYYY hh:mm:ss a")
+                )
             }
-        },
-        {
-            Header: 'Datetime',
-            accessor: 'date'
         },
         {
             Header: 'Duration (minutes)',

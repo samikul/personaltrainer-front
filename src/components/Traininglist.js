@@ -38,13 +38,17 @@ export default function Traininglist() {
         setOpen(false);
     }
 
+
     const columns = [
+
         {
             id: 'date',
-            Header: 'Date and time',
-            accessor: (date) => {
+            Header: 'Date',
+            accessor: (d) => {
                 return (
-                    moment().format('MMMM Do YYYY, h:mm:ss a')
+                    moment(d.date)
+                    .local()
+                    .format("DD/MM/YYYY hh:mm:ss a")
                 )
             }
         },

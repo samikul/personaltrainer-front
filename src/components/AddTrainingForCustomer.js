@@ -46,7 +46,7 @@ export default function AddTrainingForCustomer(props) {
 
     return (
         <div>
-            <Button size="small" color="default" onClick={handleClickOpen}>
+            <Button size="small" color="primary" onClick={handleClickOpen}>
                 New training
         </Button>
             <Dialog open={open} disableBackdropClick={true} disableEscapeKeyDown={true} onClose={handleClose} aria-labelledby="form-dialog-title">
@@ -57,7 +57,7 @@ export default function AddTrainingForCustomer(props) {
                         margin="dense"
                         id="date"
                         name="date"
-                        defaultValue="2020-01-01 00:00"
+                        defaultValue="YYYY-MM-DD"
                         value={props.singleCustomer.date}
                         onChange={inputChanged}
                         label="Date"
