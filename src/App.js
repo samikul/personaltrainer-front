@@ -6,6 +6,7 @@ import Traininglist from "./components/Traininglist";
 import Reservations from "./components/Reservations"
 import GridListi from "./components/Gridlist"
 import Coachlist from "./components/Coachlist"
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -35,6 +36,7 @@ function App() {
           </Route>
         </Switch>
       </Router>
+
     </div>
   );
 }
