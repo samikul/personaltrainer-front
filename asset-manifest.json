@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/personaltrainer-front/static/css/main.5f361e03.chunk.css",
+    "main.js": "/personaltrainer-front/static/js/main.5278eccb.chunk.js",
+    "main.js.map": "/personaltrainer-front/static/js/main.5278eccb.chunk.js.map",
+    "runtime-main.js": "/personaltrainer-front/static/js/runtime-main.088cae2d.js",
+    "runtime-main.js.map": "/personaltrainer-front/static/js/runtime-main.088cae2d.js.map",
+    "static/css/2.338aeb24.chunk.css": "/personaltrainer-front/static/css/2.338aeb24.chunk.css",
+    "static/js/2.8f136a7a.chunk.js": "/personaltrainer-front/static/js/2.8f136a7a.chunk.js",
+    "static/js/2.8f136a7a.chunk.js.map": "/personaltrainer-front/static/js/2.8f136a7a.chunk.js.map",
+    "index.html": "/personaltrainer-front/index.html",
+    "precache-manifest.dfd003cb0f65604be831aff7db9c2c3e.js": "/personaltrainer-front/precache-manifest.dfd003cb0f65604be831aff7db9c2c3e.js",
+    "service-worker.js": "/personaltrainer-front/service-worker.js",
+    "static/css/2.338aeb24.chunk.css.map": "/personaltrainer-front/static/css/2.338aeb24.chunk.css.map",
+    "static/css/main.5f361e03.chunk.css.map": "/personaltrainer-front/static/css/main.5f361e03.chunk.css.map",
+    "static/js/2.8f136a7a.chunk.js.LICENSE.txt": "/personaltrainer-front/static/js/2.8f136a7a.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.088cae2d.js",
+    "static/css/2.338aeb24.chunk.css",
+    "static/js/2.8f136a7a.chunk.js",
+    "static/css/main.5f361e03.chunk.css",
+    "static/js/main.5278eccb.chunk.js"
+  ]
+}
