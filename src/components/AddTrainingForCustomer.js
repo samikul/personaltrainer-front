@@ -51,6 +51,7 @@ export default function AddTrainingForCustomer(props) {
     }
 
     const handleDateChange = (date) => {
+        console.log(date)
         setDatetime(date)
         setTraining({ ...training, 'date': datetime })
     }
